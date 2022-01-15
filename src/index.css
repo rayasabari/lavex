@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+  @apply bg-indigo-500 hover:bg-indigo-600 transition duration-200 text-white px-4 py-2 rounded-lg
+}
+
+.form-control{
+  @apply rounded-lg p-3 bg-gray-800 focus:bg-gray-700 transition duration-300 text-gray-200 focus:outline-none
+}
