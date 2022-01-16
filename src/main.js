@@ -5,6 +5,9 @@ import store from './store'
 import './index.css'
 import './assets/tailwind.css'
 import axios from 'axios'
+import Popover from 'vue-js-popover'
+ 
+Vue.use(Popover)
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = 'http://api.lavex.test/'
 

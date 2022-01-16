@@ -29,13 +29,17 @@ export default {
     },
     async me({ commit }) {
       try {
-        let {data} = await axios.get("api/me");
+        let { data } = await axios.get("api/me");
         commit('SET_AUTHENTICATED', true);
         commit('SET_USER', data.data);
       } catch (error) {
         commit('SET_AUTHENTICATED', false);
         commit('SET_USER', []);
       }
-    }
+    },
+    async logout({ dispatch }) {
+      await axios.post('logout');
+      await dispatch('me');
+    },
   }
 }

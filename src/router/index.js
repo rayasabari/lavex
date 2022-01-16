@@ -20,7 +20,23 @@ const routes = [
     path: '/login',
     name: 'auth.login',
     component: () => import(/* webpackChunkName: "Login" */ '../views/auth/Login.vue')
-  }
+  },
+  {
+    path: '/posts/new',
+    name: 'posts.new',
+    meta: {
+      auth: true,
+    },
+    component: () => import(/* webpackChunkName: "New Post" */ '../views/posts/New.vue')
+  },
+  {
+    path: '/posts',
+    name: 'posts.index',
+    meta: {
+      auth: true,
+    },
+    component: () => import(/* webpackChunkName: "Posts" */ '../views/posts/Index.vue')
+  },
 ]
 
 const router = new VueRouter({
@@ -31,6 +47,9 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if(to.meta.auth && !store.getters['auth/check']) next('/login')
+  else next();
+
   if(to.name == 'auth.login' && store.getters['auth/check']) next({name: 'home'})
   else next();
 })

@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@innologica/vue-dropdown-menu": "^0.1.4",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9",
     "axios": "^0.24.0",
@@ -15,6 +16,7 @@
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vue": "^2.6.11",
+    "vue-js-popover": "^1.2.1",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
